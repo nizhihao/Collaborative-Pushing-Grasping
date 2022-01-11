@@ -1,0 +1,68 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <model name="teagreen">
+    <link name="teagreen_link">
+      <inertial>
+        <pose>-0.00 0.0 -0.00 0 0 0</pose>
+        <mass>0.8</mass>
+        <inertia>
+          <ixx>0.001667</ixx> 
+	  <ixy>0.0</ixy>  
+	  <ixz>0.0</ixz>
+	  <iyy>0.001667</iyy>  
+	  <iyz>0.0</iyz>  
+	  <izz>0.001667</izz>
+	</inertia>
+      </inertial>
+
+      <visual name="teagreen_visual">
+        <pose>0 0 0 0 -1.57079632679489 0 </pose>
+        <material>
+          <lighting>1</lighting>
+          <script>
+            <uri>model://teagreen/materials/scripts</uri>
+            <uri>model://teagreen/materials/textures</uri>
+            <name>Teagreen/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://teagreen/meshes/teagreen.dae</uri>
+            <scale>0.7 0.6 0.8</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      
+      <collision name="teagreen_collision">
+        <pose>0.0 0.0 0.0 0.0 -1.57079632679489 0.0</pose>
+        <geometry>
+          <box>
+            <size>0.045 0.094 0.055</size>
+          </box>
+          <!--mesh>
+            <uri>model://teagreen/meshes/teagreen.dae</uri>
+            <scale>1 0.6 0.9</scale>
+          </mesh-->
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode>
+              <mu>1.02</mu>
+              <mu2>1.02</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>0</self_collide>
+      <kinematic>0</kinematic>
+    </link>
+  </model>
+</sdf>

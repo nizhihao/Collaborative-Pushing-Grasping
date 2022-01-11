@@ -1,0 +1,4 @@
+# make the device_port be fixed by DH_hand
+#
+KERNEL=="ttyACM*", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="5740", MODE:="0777", SYMLINK+="DH_hand"
+

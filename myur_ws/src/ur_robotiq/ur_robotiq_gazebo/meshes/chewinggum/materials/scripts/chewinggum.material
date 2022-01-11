@@ -1,0 +1,18 @@
+material Chewinggum/Image
+{
+  technique
+  {
+    pass
+    {
+      ambient 1 1 1 1.000000
+      diffuse 1 1 1 1.000000
+      specular 0.2 0.2 0.2 1.000000	
+      emissive 0.5 0.5 0.5 1.0
+
+      texture_unit
+      {
+        texture chewinggum_tex_0.jpg
+      }
+    }
+  }
+}

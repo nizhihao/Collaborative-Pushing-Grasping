@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="ur_robotiq">
+
+  <xacro:include filename="$(find ur_description)/urdf/common.gazebo.xacro" />
+  <xacro:include filename="$(find ur_description)/urdf/ur10_sim.urdf.xacro" />
+  <xacro:include filename="$(find robotiq_85_description)/urdf/robotiq_85_gripper.urdf.xacro" /> 
+
+  <xacro:include filename="$(find pr2_description)/urdf/common.xacro" />
+  <xacro:include filename="$(find pr2_description)/urdf/sensors/kinect2.urdf.xacro" />
+
+
+  ########################################
+  # Ur10 robot
+  ########################################
+  <xacro:ur10_robot prefix="" joint_limited="True"/>
+
+  <link name="world" />
+  <joint name="world_joint" type="fixed">
+    <parent link="world" />
+    <child link = "base_link" />
+    <origin xyz="-0.1 0.0 0.7" rpy="0.0 0.0 0.0" />
+  </joint>
+
+  ########################################
+  # Gripper
+  ########################################
+  <xacro:robotiq_85_gripper prefix="" parent="wrist_3_link" >
+    <origin xyz="0 0.1 0" rpy="0 0 ${pi/2}"/>
+  </xacro:robotiq_85_gripper>
+
+  ########################################
+  # Kinect RGBD Camera
+  ########################################
+  <xacro:kinect2_v0 name="my" parent="world" >
+    <origin xyz="0.849 -0.35773503 1.542487112901378" rpy="0.0 ${2 * pi / 3} ${- pi / 2}"/>
+  </xacro:kinect2_v0>
+
+  ########################################
+  # Grasp Plugin
+  ########################################
+  <xacro:include filename="$(find ur_robotiq_description)/urdf/gzplugin_grasp_fix.urdf.xacro"/>
+  <xacro:gzplugin_grasp_fix/>
+
+
+</robot>

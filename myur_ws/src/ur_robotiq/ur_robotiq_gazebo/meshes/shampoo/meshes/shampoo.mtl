@@ -1,0 +1,31 @@
+# Blender MTL File: 'None'
+# Material Count: 3
+
+newmtl None.001_shampoo_tex_0.jpg.003
+Ns 0.000000
+Ka 0.000000 0.000000 0.000000
+Kd 0.512000 0.512000 0.512000
+Ks 0.800000 0.800000 0.800000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd shampoo_tex_0.jpg
+
+newmtl None_NONE.001
+Ns 0.000000
+Ka 0.000000 0.000000 0.000000
+Kd 0.512000 0.512000 0.512000
+Ks 0.800000 0.800000 0.800000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl material_0.001_shampoo_tex_0.jpg.004
+Ns 0.000000
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 1.000000 1.000000 1.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd shampoo_tex_0.jpg

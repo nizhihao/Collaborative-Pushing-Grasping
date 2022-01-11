@@ -1,0 +1,68 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <model name="sugar">
+    <link name="sugar_link">
+      <inertial>
+        <pose>-0.00 0.0 -0.00 0 0 0</pose>
+        <mass>0.8</mass>
+        <inertia>
+          <ixx>0.001667</ixx> 
+	  <ixy>0.0</ixy>  
+	  <ixz>0.0</ixz>
+	  <iyy>0.001667</iyy>  
+	  <iyz>0.0</iyz>  
+	  <izz>0.001667</izz>
+	</inertia>
+      </inertial>
+
+      <visual name="sugar_visual">
+        <pose>0 0 0 0 -1.57079632679489 0 </pose>
+        <material>
+          <lighting>1</lighting>
+          <script>
+            <uri>model://sugar/materials/scripts</uri>
+            <uri>model://sugar/materials/textures</uri>
+            <name>Sugar/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://sugar/meshes/sugar.dae</uri>
+            <scale>0.9 0.9 0.8</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      
+      <collision name="sugar_collision">
+        <pose>0.0 0.0 0.0 0.0 -1.57079632679489 0.0</pose>
+        <geometry>
+          <box>
+            <size>0.04 0.066 0.098</size>
+          </box>
+          <!--mesh>
+            <uri>model://sugar/meshes/sugar.dae</uri>
+            <scale>0.9 0.9 1</scale>
+          </mesh-->
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>0</self_collide>
+      <kinematic>0</kinematic>
+    </link>
+  </model>
+</sdf>

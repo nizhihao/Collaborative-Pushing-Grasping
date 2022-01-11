@@ -1,0 +1,22 @@
+# Command to control the GRIPPERS
+# author: Jie Sun <jie.sun@dh-robotics.com>, AUG 2018
+# Copyright @ DH-Robotics
+
+
+# goal definition
+
+int32 MotorID
+int32 force
+int32 position
+
+---
+
+# result definition
+
+bool opration_done
+
+---
+
+# feedback definition
+
+bool position_reached

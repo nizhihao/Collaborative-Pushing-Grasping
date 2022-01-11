@@ -1,0 +1,74 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <model name="z_carrs">
+    <link name="z_carrs_link">
+      <inertial>
+        <pose>-0.00 0.0 -0.005 0 0 0</pose>
+        <mass>0.8</mass>
+        <inertia>
+          <ixx>0.001667</ixx> 
+	  <ixy>0.0</ixy>  
+	  <ixz>0.0</ixz>
+	  <iyy>0.001667</iyy>  
+	  <iyz>0.0</iyz>  
+	  <izz>0.001667</izz>
+	</inertia>
+      </inertial>
+
+      <visual name="z_carrs_visual">
+        <pose>0 0 0 0 0 0 </pose>
+        <material>
+	  <lighting>1</lighting>
+	  <ambient>0.2 0.2 0.2 1</ambient>
+	  <diffuse>0.8 0.8 0.8 1</diffuse>
+	  <specular>0.2 0.2 0.2 1</specular>
+	  <emissive>0.55 0.55 0.55 1</emissive>
+          <script>
+            <uri>model://z_carrs/materials/scripts</uri>
+            <uri>model://z_carrs/materials/textures</uri>
+            <name>Z_carrs/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://z_carrs/meshes/z_carrs.dae</uri>
+	    <scale>0.03 0.04 0.06</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      
+      <collision name="z_carrs_collision">
+        <pose>0.0 0.0 0.02 0.0 0.0 0.0</pose>
+        <geometry>
+          <box>
+            <size>0.056 0.056 0.056</size>
+          </box>
+          <!--mesh>
+            <uri>model://thuna/meshes/thunaLowRes.dae</uri>
+	    <scale>1 1 1</scale>
+          </mesh-->
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+	    <ode>
+	      <max_vel>0.000</max_vel>
+            </ode>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>0</self_collide>
+      <kinematic>0</kinematic>
+    </link>
+  </model>
+</sdf>

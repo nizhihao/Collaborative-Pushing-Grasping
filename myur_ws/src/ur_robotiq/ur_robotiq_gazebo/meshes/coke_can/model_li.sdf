@@ -1,0 +1,71 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <model name="coke_can">
+    <link name="coke_can_link">
+      <inertial>
+        <pose>-0.00 0.0 -0.008 0 0 0</pose>
+        <mass>0.7</mass>
+        <inertia>
+          <ixx>0.001667</ixx> 
+	  <ixy>0.0</ixy>  
+	  <ixz>0.0</ixz>
+	  <iyy>0.001667</iyy>  
+	  <iyz>0.0</iyz>  
+	  <izz>0.001667</izz>
+	</inertia>
+      </inertial>
+
+      <visual name="coke_can_visual">
+        <pose>0.006 0 -0.185 0 0 0</pose>
+        <material>
+          <lighting>1</lighting>
+          <script>
+            <uri>model://coke_can/materials/scripts</uri>
+            <uri>model://coke_can/materials/textures</uri>
+            <name>Coke_can/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://coke_can/meshes/coke_can.dae</uri>
+	    <scale>0.95 0.95 0.85</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      
+      <collision name="coke_can_collision">
+        <pose>0.001 0.012 0.000 1.57079632679489 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.058 0.052 0.10</size>
+          </box>
+	  <!--cylinder>
+	    <radius>0.030</radius>
+	    <length>0.12</length>
+	  </cylinder-->
+          <!--mesh>
+            <uri>model://coke_can/meshes/coke_can.dae</uri>
+          </mesh-->
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>0</self_collide>
+      <kinematic>0</kinematic>
+    </link>
+  </model>
+</sdf>

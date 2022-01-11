@@ -1,0 +1,67 @@
+
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <model name="cup">
+    <link name="cup_link">
+      <inertial>
+        <pose>-0.00 0.0 0 3.14159265 0 0</pose>
+        <mass>0.8</mass>
+        <inertia>
+          <ixx>0.01667</ixx> 
+	  <ixy>0.0</ixy>  
+	  <ixz>0.0</ixz>
+	  <iyy>0.01667</iyy>  
+	  <iyz>0.0</iyz>  
+	  <izz>0.01667</izz>
+	</inertia>
+      </inertial>
+
+      <visual name="cap_visual">
+        <pose>-0.04 0.035 0.065 3.14159265 0 0 </pose>
+        <material>
+          <lighting>1</lighting>
+	  <ambient>1 1 1 1</ambient>
+	  <emissive>0.7 0.7 0.7 1</emissive>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://cup/meshes/cup_3.dae</uri>
+	    <scale>0.02 0.02 0.02</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      
+      <collision name="cup_collision">
+        <pose>-0 0 0.0105 0 0.0 0.0</pose>
+        <geometry>
+	  <cylinder>
+	    <radius>0.038</radius>
+	    <length>0.040</length>
+	  </cylinder>
+          <!--mesh>
+            <uri>model://cup/meshes/cup_3.dae</uri>
+	    <scale>0.025 0.025 0.025</scale>
+          </mesh-->
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>0</self_collide>
+      <kinematic>0</kinematic>
+    </link>
+  </model>
+</sdf>

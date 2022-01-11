@@ -1,0 +1,12 @@
+<launch>
+
+  <param name="Hand_Model" type="string" value="AG-2E"/>
+  <!-- via USB -->
+  <!--<param name="Connect_port" type="string" value="/dev/DH_hand"/>-->
+  <!-- via TCP -->
+  <param name="Connect_port" type="string" value="192.168.1.30:8888"/>
+  <param name="WaitDataTime" type="double" value="0.05"/>
+  <node pkg="dh_hand_driver" type="hand_controller" name="hand_controller" output="screen">
+  </node>
+
+</launch>

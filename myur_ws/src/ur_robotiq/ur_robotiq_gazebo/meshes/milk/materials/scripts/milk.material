@@ -1,0 +1,18 @@
+material Milk/Image
+{
+  technique
+  {
+    pass
+    {
+      ambient 1 1 1 1.000000
+      diffuse 1 1 1 1.000000
+      specular 0.8 0.8 0.8 1.000000	
+      emissive 1 1 1 1.0
+
+      texture_unit
+      {
+        texture milk_tex_0.jpg
+      }
+    }
+  }
+}

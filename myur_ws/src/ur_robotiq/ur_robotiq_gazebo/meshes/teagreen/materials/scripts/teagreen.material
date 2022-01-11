@@ -1,0 +1,18 @@
+material Teagreen/Image
+{
+  technique
+  {
+    pass
+    {
+      ambient 1 1 1 1.000000
+      diffuse 1 1 1 1.000000
+      specular 0.2 0.2 0.2 1.000000	
+      emissive 0.4 0.4 0.4 1.0
+
+      texture_unit
+      {
+        texture teagreen_tex_0.jpg
+      }
+    }
+  }
+}

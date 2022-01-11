@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <model name="milk">
+    <link name="milk_link">
+      <inertial>
+        <pose>-0.00 0.0 -0.00 0 0 0</pose>
+        <mass>0.2</mass>
+        <inertia>
+          <ixx>0.01667</ixx> 
+	  <ixy>0.0</ixy>  
+	  <ixz>0.0</ixz>
+	  <iyy>0.01667</iyy>  
+	  <iyz>0.0</iyz>  
+	  <izz>0.01667</izz>
+	</inertia>
+      </inertial>
+
+      <visual name="milk_visual">
+        <pose>0 0 0 0 0 0 </pose>
+        <material>
+          <lighting>1</lighting>
+          <script>
+            <uri>model://milk/materials/scripts</uri>
+            <uri>model://milk/materials/textures</uri>
+            <name>Milk/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://milk/meshes/milk.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      
+      <collision name="milk_collision">
+        <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+        <geometry>
+          <!--box>
+            <size>0.19 0.06 0.15</size>
+          </box-->
+          <mesh>
+            <uri>model://milk/meshes/milk.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>0</self_collide>
+      <kinematic>0</kinematic>
+    </link>
+  </model>
+</sdf>

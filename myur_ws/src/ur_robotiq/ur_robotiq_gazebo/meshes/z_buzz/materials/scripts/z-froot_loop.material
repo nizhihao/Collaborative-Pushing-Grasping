@@ -1,0 +1,22 @@
+material Z_carrs/Image
+{
+  technique
+  {
+    pass
+    {
+      ambient 1 1 1 1.000000
+      diffuse 1 1 1 1.000000
+      specular 0.8 0.8 0.8 1.000000	
+      emissive 0.6 0.6 0.6 1.0
+
+      texture_unit
+      {
+        texture escanear0001.jpg 
+        texture escanear0002.jpg
+        texture escanear0003.jpg 
+        texture escanear0004.jpg
+        texture escanear0005.jpg
+      }
+    }
+  }
+}

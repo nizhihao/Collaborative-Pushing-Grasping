@@ -1,0 +1,67 @@
+
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <model name="eraser">
+    <link name="eraser_link">
+      <inertial>
+        <pose>0.0 0.0 0 0 0 0</pose>
+        <mass>0.8</mass>
+        <inertia>
+          <ixx>0.001667</ixx> 
+	  <ixy>0.0</ixy>  
+	  <ixz>0.0</ixz>
+	  <iyy>0.001667</iyy>  
+	  <iyz>0.0</iyz>  
+	  <izz>0.001667</izz>
+	</inertia>
+      </inertial>
+
+      <visual name="eraser_visual">
+        <pose>-0.01 -0.01 0 0 0 0</pose>
+        <material>
+          <script>
+            <uri>model://eraser/materials/scripts</uri>
+            <uri>model://eraser/materials/textures</uri>
+            <name>eraser</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://eraser/meshes/eraser.dae</uri>
+	    <scale>0.75 0.75 0.75</scale>
+          </mesh>
+        </geometry>
+      </visual>
+
+
+      <collision name="eraser_collision">
+        <pose>0.004 0.0065 0.015 0 0 0.6418652434</pose>
+        <geometry>
+          <box>
+            <size>0.042 0.095 0.040</size>
+          </box>
+          <!--mesh>
+            <uri>model://eraser/meshes/eraser.dae</uri>
+          </mesh-->
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode>
+              <mu>0.9</mu>
+              <mu2>0.9</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+
+    </link>
+  </model>
+</sdf>

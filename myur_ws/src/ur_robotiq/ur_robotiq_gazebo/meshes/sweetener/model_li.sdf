@@ -1,0 +1,66 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <model name="sweetener">
+    <link name="sweetener_link">
+      <inertial>
+        <pose>-0.00 0.0 -0.00 0 0 0</pose>
+        <mass>0.6</mass>
+        <inertia>
+          <ixx>0.001667</ixx> 
+	  <ixy>0.0</ixy>  
+	  <ixz>0.0</ixz>
+	  <iyy>0.001667</iyy>  
+	  <iyz>0.0</iyz>  
+	  <izz>0.001667</izz>
+	</inertia>
+      </inertial>
+
+      <visual name="sweetener_visual">
+        <pose>0 0 0 0 0 0 </pose>
+        <material>
+          <lighting>1</lighting>
+          <script>
+            <uri>model://sweetener/materials/scripts</uri>
+            <uri>model://sweetener/materials/textures</uri>
+            <name>Sweetener/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://sweetener/meshes/sweetener.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      
+      <collision name="sweetener_collision">
+        <pose>0.0 0.0 0.0 0 0.0 0.0</pose>
+        <geometry>
+          <box>
+            <size>0.053 0.035 0.12</size>
+          </box>
+          <!--mesh>
+            <uri>model://sweetener/meshes/sweetener.dae</uri>
+          </mesh-->
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>0</self_collide>
+      <kinematic>0</kinematic>
+    </link>
+  </model>
+</sdf>

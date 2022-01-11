@@ -1,0 +1,69 @@
+
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <model name="chewinggum">
+    <link name="chewinggum_link">
+      <inertial>
+        <pose>-0.00 0.0 0.00 0 0 0</pose>
+        <mass>0.8</mass>
+        <inertia>
+          <ixx>0.001667</ixx> 
+	  <ixy>0.0</ixy>  
+	  <ixz>0.0</ixz>
+	  <iyy>0.001667</iyy>  
+	  <iyz>0.0</iyz>  
+	  <izz>0.001667</izz>
+	</inertia>
+      </inertial>
+
+      <visual name="chewinggum_visual">
+        <pose>0 0 0 0 0 0 </pose>
+        <material>
+          <lighting>1</lighting>
+          <script>
+            <uri>model://chewinggum/materials/scripts</uri>
+            <uri>model://chewinggum/materials/textures</uri>
+            <name>Chewinggum/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://chewinggum/meshes/chewinggum.dae</uri>
+            <scale>0.8 0.5 0.9</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      
+      <collision name="chewinggum_collision">
+        <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+        <geometry>
+          <box>
+            <size>0.040 0.082 0.040</size>
+          </box>
+          <!--mesh>
+            <uri>model://chewinggum/meshes/chewinggum.dae</uri>
+            <scale>0.9 0.6 1</scale>
+          </mesh-->
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>0</self_collide>
+      <kinematic>0</kinematic>
+    </link>
+  </model>
+</sdf>

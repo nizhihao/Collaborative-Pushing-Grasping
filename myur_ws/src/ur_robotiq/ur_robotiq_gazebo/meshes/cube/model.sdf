@@ -1,0 +1,68 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <model name="cube">
+    <link name="cube_link">
+      <inertial>
+        <pose>-0.00 0.0 0.00 0 0 0</pose>
+        <mass>0.8</mass>
+        <inertia>
+          <ixx>0.01667</ixx> 
+	  <ixy>0.0</ixy>  
+	  <ixz>0.0</ixz>
+	  <iyy>0.01667</iyy>  
+	  <iyz>0.0</iyz>  
+	  <izz>0.01667</izz>
+	</inertia>
+      </inertial>
+
+      <visual name="cube_visual">
+        <pose>-0.03 0.03 0 1.57079632679489 0 0 </pose>
+        <material>
+          <lighting>1</lighting>
+          <!--script>
+            <uri>model://cleaner/materials/scripts</uri>
+            <uri>model://cleaner/materials/textures</uri>
+            <name>Cleaner/Image</name>
+          </script-->
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://cube/meshes/cube.dae</uri>
+	    <scale>0.0022 0.0022 0.0022</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      
+      <collision name="cube_collision">
+        <pose>-0.0 0.0 0.03 0 0.0 0.0</pose>
+        <geometry>
+          <box>
+            <size>0.056 0.056 0.056</size>
+          </box>
+          <!--mesh>
+            <uri>model://cube/meshes/cube.dae</uri>
+	    <scale>0.003 0.003 0.003</scale>
+          </mesh-->
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>0</self_collide>
+      <kinematic>0</kinematic>
+    </link>
+  </model>
+</sdf>
