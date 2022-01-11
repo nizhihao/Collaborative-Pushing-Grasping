@@ -46,13 +46,13 @@ This implementation requires the following dependencies (tested on Ubuntu 16.04 
    The Introduction of the ROS package.
 
    ```shell
-   dh_hand_driver   							 # dh gripper's driver
-   drl_push_grasp   							 # the RL package(all algorithm code in this package)
-   gazebo-pkgs      						  	 # Gazebo grasp plugin
-   robotiq_85_gripper   						 # robotiq_85 gripper package
-   universal_robot-kinetic-devel  				 # UR robotic arm package
-   ur_modern_driver               			     # UR robotic arm driver in the real world 
-   ur_robotiq                     				 # URDF, Objects Mesh, Initial Env, MoveIt config package
+   dh_hand_driver   	# dh gripper's driver
+   drl_push_grasp    # the RL package(all algorithm code in this package)
+   gazebo-pkgs       # Gazebo grasp plugin
+   robotiq_85_gripper   # robotiq_85 gripper package
+   universal_robot-kinetic-devel  	# UR robotic arm package
+   ur_modern_driver 		     # UR robotic arm driver in the real world 
+   ur_robotiq 			  # URDF, Objects Mesh, Initial Env, MoveIt config package
    ```
 
 2. If you want to train in Gazebo,  You can run the following code and set is_sim=True, is_testing=False in the main.py. 
@@ -71,26 +71,28 @@ This implementation requires the following dependencies (tested on Ubuntu 16.04 
    The Introduction of the drl_push_grasp(RL) package.
 
    ```shell
-   logger.py   							     # save the log
-   main.py   									 # main func
-   multi_model.py     						 	 # network structure
-   trainer.py   								 # agent 
-   ur_robotiq.py  								 # environment
-   utils.py			                 	     # some function module
+   logger.py      # save the log
+   main.py   	   # main func
+   multi_model.py  # network structure
+   trainer.py   	 # agent 
+   ur_robotiq.py  # environment
+   utils.py		   # some function module
    ```
 
-```
    
+
 3. when finish the train or test, run the following code to draw the performance curve.
 
-   ```shell
+   ```
    cd ./drl_push_grasp/scripts/
    # only compare the push or grasp policy
    python plot_ablation_push.py './logs/YOUR-SESSION-DIRECTORY-NAME-HERE-01' './logs/YOUR-SESSION-DIRECTORY-NAME-HERE-02' './logs/YOUR-SESSION-DIRECTORY-NAME-HERE-03'
    python plot_ablation_grasp.py './logs/YOUR-SESSION-DIRECTORY-NAME-HERE-01' './logs/YOUR-SESSION-DIRECTORY-NAME-HERE-02' './logs/YOUR-SESSION-DIRECTORY-NAME-HERE-03'
    # To plot the performance of pushing-grasping policy over training time
    python plot.py './logs/YOUR-SESSION-DIRECTORY-NAME-HERE'
-```
+   ```
+
+   
 
 ## Running on a Real Robot (UR10)
 
@@ -167,5 +169,5 @@ url = "https://www.ieee-jas.net//article/id/7a2afe68-eb96-4946-aa86-befec6b1fd66
 
 ## Contact
 
-If you have any questions or find any bugs, please let me know: [ZhiHao Ni](nzh@hdu.edu.cn).
+If you have any questions or find any bugs, please let me know: ZhiHao Ni(nzh@hdu.edu.cn).
 
