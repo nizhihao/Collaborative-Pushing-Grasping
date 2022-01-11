@@ -37,9 +37,10 @@ This implementation requires the following dependencies (tested on Ubuntu 16.04 
 
    ```shell
    git clone https://github.com/nizhihao/Collaborative-Pushing-Grasping.git
-   cd Collaborative-Pushing-Grasping/myur_ws
+   mv /home/user/Collaborative-Pushing-Grasping/myur_ws /home/user
+   cd /home/user/myur_ws
    catkin_make -j1
-   echo "/home/user/Collaborative-Pushing-Grasping/myur_ws/devel/setup.bash" >> ~/.bashrc
+   echo "/home/user/myur_ws/devel/setup.bash" >> ~/.bashrc
    source ~/.bashrc
    ```
 
@@ -60,7 +61,9 @@ This implementation requires the following dependencies (tested on Ubuntu 16.04 
    If you want to test in Gazebo,  You can run the following code and set is_sim=True, is_testing=True in the main.py. 
 
    ```
-   Tips: this repository only provides the training or testing process about Collaborative pushing grasping method, the training process of pushing policy and grasping policy don't export in this repository.
+   Tips: 
+   1.this repository only provides the training or testing process about Collaborative pushing grasping method, the training process of pushing policy and grasping policy don't export in this repository.
+   2.You need to open a new Terminal for each command Line.
    ```
 
    ```shell
@@ -84,12 +87,12 @@ This implementation requires the following dependencies (tested on Ubuntu 16.04 
 3. when finish the train or test, run the following code to draw the performance curve.
 
    ```
-   cd ./drl_push_grasp/scripts/
+   cd /home/user/myur_ws/src/drl_push_grasp/scripts/
    # only compare the push or grasp policy
-   python plot_ablation_push.py './logs/YOUR-SESSION-DIRECTORY-NAME-HERE-01' './logs/YOUR-SESSION-DIRECTORY-NAME-HERE-02' './logs/YOUR-SESSION-DIRECTORY-NAME-HERE-03'
-   python plot_ablation_grasp.py './logs/YOUR-SESSION-DIRECTORY-NAME-HERE-01' './logs/YOUR-SESSION-DIRECTORY-NAME-HERE-02' './logs/YOUR-SESSION-DIRECTORY-NAME-HERE-03'
+   python plot_ablation_push.py '../logs/YOUR-SESSION-DIRECTORY-NAME-HERE-01' '../logs/YOUR-SESSION-DIRECTORY-NAME-HERE-02'
+   python plot_ablation_grasp.py '../logs/YOUR-SESSION-DIRECTORY-NAME-HERE-01' '../logs/YOUR-SESSION-DIRECTORY-NAME-HERE-02'
    # To plot the performance of pushing-grasping policy over training time
-   python plot.py './logs/YOUR-SESSION-DIRECTORY-NAME-HERE'
+   python plot.py '../logs/YOUR-SESSION-DIRECTORY-NAME-HERE'
    ```
 
    
@@ -109,7 +112,7 @@ The latest version of our system uses RGB-D data captured from an Intel® RealSe
 1. Navigate to `drl_push_grasp/scripts/realsense` and compile `realsense.cpp`:
 
    ```shell
-   cd drl_push_grasp/scripts/realsense
+   cd /home/user/myur_ws/src/drl_push_grasp/scripts/realsense
    cmake .
    make
    ```
@@ -129,7 +132,7 @@ We provide a simple calibration script to estimate camera extrinsics with respec
 run the following to move the robot and calibrate:
 
 ```shell
-cd ./src/drl_push_grasp/scripts/realsense && ./realsense  # run the realsense to obtain the camera data
+cd /home/user/myur_ws/src/drl_push_grasp/scripts/realsense && ./realsense  # run the realsense to obtain the camera data
 roslaunch ur_modern_driver ur10_bringup_joint_limited.launch robot_ip:=192.168.1.186 # run the ur10 arm
 roslaunch ur10_moveit_config ur10_moveit_planning_#execution.launch  # run the MoveIt node
 roslaunch dh_hand_driver dh_hand_controller.launch  # run the dh gripper
@@ -141,7 +144,7 @@ python calibrate_myrobot.py  # calibrate
 If you want to test in real world,  You can run the following code and set is_sim=False, is_testing=True in the main.py. 
 
 ```shell
-cd ./src/drl_push_grasp/scripts/realsense && ./realsense  # run the realsense to obtain the camera data
+cd /home/user/myur_ws/src/drl_push_grasp/scripts/realsense && ./realsense  # run the realsense to obtain the camera data
 roslaunch ur_modern_driver ur10_bringup_joint_limited.launch robot_ip:=192.168.1.186 # run the ur10 arm
 roslaunch ur10_moveit_config ur10_moveit_planning_execution.launch  # run the MoveIt node
 roslaunch dh_hand_driver dh_hand_controller.launch  # run the dh gripper
