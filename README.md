@@ -40,7 +40,7 @@ This implementation requires the following dependencies (tested on Ubuntu 16.04 
    mv /home/user/Collaborative-Pushing-Grasping/myur_ws /home/user
    cd /home/user/myur_ws
    catkin_make -j1
-   echo "/home/user/myur_ws/devel/setup.bash" >> ~/.bashrc
+   echo "source /home/user/myur_ws/devel/setup.bash" >> ~/.bashrc
    source ~/.bashrc
    ```
 
