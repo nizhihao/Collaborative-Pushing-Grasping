@@ -156,17 +156,15 @@ rosrun drl_push_grasp main.py  # run the agent
 If you find this code useful in your work, please consider citing:
 
 ```shell
-@articleInfo{JAS-2021-0389,
-title = "Collaborative Pushing and Grasping of Tightly Stacked Objects via Deep Reinforcement Learning",
-journal = "IEEE/CAA Journal of Automatica Sinica",
-volume = "9",
-number = "JAS-2021-0389,
-pages = "135",
-year = "2022",
-note = "",
-issn = "2329-9266",
-doi = "10.1109/JAS.2021.1004255",
-url = "https://www.ieee-jas.net//article/id/7a2afe68-eb96-4946-aa86-befec6b1fd66"
+@article{yang2021collaborative,
+  title={Collaborative pushing and grasping of tightly stacked objects via deep reinforcement learning},
+  author={Yang, Yuxiang and Ni, Zhihao and Gao, Mingyu and Zhang, Jing and Tao, Dacheng},
+  journal={IEEE/CAA Journal of Automatica Sinica},
+  volume={9},
+  number={1},
+  pages={135--145},
+  year={2021},
+  publisher={IEEE}
 }
 ```
 
